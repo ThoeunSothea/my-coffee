@@ -151,11 +151,19 @@
             /* border-radius: 50%; */
         }
         @media screen and (max-width: 768px){
+            .nav1 .nav-meun ul{
+                display: flex;
+                flex-direction: column;
+            }
             .nav2{
                 flex-direction: column;
             }
             .nav-body{
                 width: 80%;
+            }
+            .nav-logo img{
+                width: 40px;
+                height: 40px;
             }
             .nav-card img{
                 width: 150px;
@@ -164,6 +172,22 @@
             .slider{
                 width: 100%;
                 height: 400px;
+                top: 100px;
+            }
+            .slide-btn{
+                margin: 10px 5px;
+            }
+            .About{
+                width: 100%;
+                height: 100%;
+            }
+            .About-body{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                padding: 20px;
+                margin: 10px;
             }
             
         }
@@ -193,7 +217,7 @@
         }
         .About-body{
             width: 100%;
-            height: 350px;
+            height: 400px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -463,8 +487,9 @@
                 <h2 href="#top">ABouut Us</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nihil alias. Quas, minima. Perferendis ut explicabo libero tempora quod vero.</p>
             </div>
-            <div class="footer-section">
-                <ul>
+            <div class="follow">
+                <div class="footer-section">
+                    <ul>
                     <li><a href="#top">Home</a></li>
                     <li><a href="#AboutUs">About US</a></li>
                     <li><a href="">Contact</a></li>
@@ -479,6 +504,7 @@
                 <a href="https://www.instagram.com/"><i class="fi fi-brands-instagram"></i></a>
                 <a href="https://www.linkedin.com/"><i class="fi fi-brands-linkedin"></i></a>
                 <a href="https://web.telegram.org/a/"><i class="fi fi-brands-telegram"></i></a>
+            </div>
             </div>
         </div>
         <div class="footer-bottom">

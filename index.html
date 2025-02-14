@@ -334,6 +334,18 @@
                 <div class="slide">
                     <img src="/img/Cafe-Amazon 6 .jpg" alt="Slide 2">
                 </div>
+                <div class="slide">
+                    <img src="/img/slider 1.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="/img/slider 2.jpg" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="/img/slider 3.jpg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="/img/slider 4.png" alt="Slide 2">
+                </div>
             <button class="slide-btn right" onclick="nextSlide()">&#10095;</button>
         </section>
         <hr>
@@ -517,35 +529,35 @@
         
     let slideIndex = 0;
 
-function showSlides() {
-    let slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); 
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); 
-}
 
-function prevSlide() {
-    let slides = document.getElementsByClassName("slide");
-    slideIndex--;
-    if (slideIndex < 1) { slideIndex = slides.length }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function prevSlide() {
+        let slides = document.getElementsByClassName("slide");
+        slideIndex--;
+        if (slideIndex < 1) { slideIndex = slides.length }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
     }
-    slides[slideIndex - 1].style.display = "block";
-}
 
-function nextSlide() {
-    let slides = document.getElementsByClassName("slide");
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    function nextSlide() {
+        let slides = document.getElementsByClassName("slide");
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
     }
-    slides[slideIndex - 1].style.display = "block";
-}
-showSlides();
-    </script>
+    showSlides();
+        </script>

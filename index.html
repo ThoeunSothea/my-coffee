@@ -24,10 +24,9 @@
         overflow: hidden;
         position: relative;
         margin: 100px auto; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
         scroll-behavior: smooth;
+        display: grid;
+        place-content: center;
         }
 
 
@@ -38,7 +37,7 @@
         }
 
         .slide img {
-            margin: 10px 20px;
+            margin: 10px 0;
             width: 750px;
             height: 700px;
             overflow: hidden;
@@ -97,10 +96,10 @@
             margin-left: 10px;
         }
         .nav-menu {
-    background-color: #333;
-    padding: 10px;
-    position: relative;
-}
+        background-color: #333;
+        padding: 10px;
+        position: relative;
+        }
 
         .menu-icon {
             display: none; 
@@ -193,101 +192,9 @@
         .nav-card img{
             width: 200px;
             height: 300px;
-            /* border-radius: 50%; */
-        }
-        @media screen and (max-width: 768px){
-            *{
-                padding: 0;
-                margin:0;
-                box-sizing: border-box;
-            }
-            .nav1 .nav-meun ul{
-                display: flex;
-                flex-direction: column;
-            }
-            .nav2{
-                flex-direction: column;
-            }
-            .nav-body{
-                width: 80%;
-            }
-            .nav-logo img{
-                width: 40px;
-                height: 40px;
-            }
-            .nav-card img{
-                width: 150px;
-                height: 200px;
-            }
-            .slider{
-                width: 100%;
-                height: 370px;
-                top: 100px;
-            }
-            .slider-body{
-                display: grid;
-                align-items: center;
-            }
-            .slide{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                place-content: center;
-            }
-            .slide-btn{
-                margin: 10px 5px;
-            }
-            .About{
-                width: 100%;
-                height: 100%;
-            }
-            .About-body{
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            .menu-icon {
-                display: block; /* Show menu icon on mobile */
-                font-size: 24px;
-                color: white;
-                cursor: pointer;
-            }
-
-            nav ul {
-                display: none; /* Hide menu initially on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                background: black;
-                text-align: center;
-                padding: 20px 0;
-            }
-
-            nav ul li {
-                padding: 15px 0;
-            }
-
-            nav ul input[type="search"] {
-                display: none;
-            }
-        }
-                
-        @media screen and (max-width: 1024px){
-            .nav-body{
-                width: 90%;
-            }
-            .slide{
-                width: 100%;
-
-            }
             
         }
+        
 
         .About{
             scroll-behavior: smooth;
@@ -379,6 +286,121 @@
             margin-top: 20px;
             border-top: 1px solid gray;
             padding-top: 10px;
+        }
+        @media screen and (max-width: 768px){
+            *{
+                padding: 0;
+                margin:0;
+                box-sizing: border-box;
+            }
+            .nav1 .nav-meun ul{
+                display: flex;
+                flex-direction: column;
+            }
+            .nav2{
+                flex-direction: column;
+            }
+            .nav-body{
+                width: 80%;
+            }
+            .nav-logo img{
+                width: 40px;
+                height: 40px;
+            }
+            .nav-card img{
+                width: 150px;
+                height: 200px;
+            }
+            .slider{
+                width: 100%;
+                height: 370px;
+                top: 10px;
+            }
+            .slider-body{
+                display: grid;
+                align-items: center;
+                place-content: center;
+            }
+            .slide{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                place-content: center;
+            }
+            .slide-btn{
+                margin:10px 20px;
+            }
+            .About{
+                width: 100%;
+                height: 100%;
+            }
+            .About-body{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .menu-icon {
+                display: block; 
+                font-size: 24px;
+                color: white;
+                cursor: pointer;
+                position:fixed;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+            }
+
+            nav ul {
+                display: none; 
+                flex-direction: column;
+                position: fixed;
+                top: -60px;
+                right: 0;
+                width: 100%;
+                background: black;
+                text-align: center;
+                padding: 20px 0;
+                transition:transform 0.3s ease-in-out;
+                transform: translateY(-100%);
+            }
+
+            nav ul.show{
+                display: flex;
+                transform: translateY(0);
+            }
+            nav ul li {
+                padding: 15px 0;
+            }
+
+            nav ul input[type="search"] {
+                display: none;
+            }
+            .footer-icons{
+                display: flex;
+
+            }
+            .menu{
+                margin-top: 60px;
+                text-align: center;
+                padding: 20px;
+            }
+
+        }
+                
+        @media screen and (max-width: 1024px){
+            .nav-body{
+                width: 90%;
+            }
+            .slide{
+                width: 100%;
+
+            }
+            
+            
         }
 
     </style>
@@ -662,13 +684,17 @@
         }
         slides[slideIndex - 1].style.display = "block";
     }
-    function toggleMenu() {
+//     function toggleMenu() {
+//     var menu = document.getElementById("menu");
+//     if (menu.style.display === "block") {
+//         menu.style.display = "none";
+//     } else {
+//         menu.style.display = "block";
+//     }
+// }
+function toggleMenu() {
     var menu = document.getElementById("menu");
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
+    menu.classList.toggle("show"); // បន្ថែម ឬលាក់ class "show"
 }
     showSlides();
         </script>

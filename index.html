@@ -49,7 +49,7 @@
             top: 50%;
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.5);
-            color: white;
+            color: rgb(10, 10, 10);
             border: none;
             padding: 10px;
             cursor: pointer;
@@ -96,9 +96,54 @@
         .nav-logo h1{
             margin-left: 10px;
         }
-        .nav-meun ul{
-            display: flex;
+        .nav-menu {
+    background-color: #333;
+    padding: 10px;
+    position: relative;
+}
+
+        .menu-icon {
+            display: none; 
+        }
+        nav ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
+            /* background: #444; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul li {
+            padding: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 0px 20px ;
+            font-size: 20px;
+        }
+
+        nav ul input[type="search"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        /* .nav-meun{
+            display:;
+        }
+        .nav-meun ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
         }
         .nav-meun ul li{
             padding: 0 10px;
@@ -107,7 +152,7 @@
         .nav-meun ul li a{
             text-decoration: none;
             color: #fff;
-        }
+        } */
         .nav-meun ul li a:hover{
             color: aquamarine;
         }
@@ -205,7 +250,34 @@
                 margin: 10px;
             }
             
+            .menu-icon {
+                display: block; /* Show menu icon on mobile */
+                font-size: 24px;
+                color: white;
+                cursor: pointer;
+            }
+
+            nav ul {
+                display: none; /* Hide menu initially on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background: black;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            nav ul li {
+                padding: 15px 0;
+            }
+
+            nav ul input[type="search"] {
+                display: none;
+            }
         }
+                
         @media screen and (max-width: 1024px){
             .nav-body{
                 width: 90%;
@@ -320,14 +392,14 @@
             </div>
             <div class="nav-meun">
                 <nav>
-                    <ul>
+                    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+                    <ul id="menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#AboutUs">About US</a></li>
                         <li><a href="#About">Course</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="3-login-card.html">Login</a></li>
                         <input type="search" placeholder="Search Here">
-
                     </ul>
                 </nav>
             </div>
@@ -590,5 +662,13 @@
         }
         slides[slideIndex - 1].style.display = "block";
     }
+    function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+}
     showSlides();
         </script>

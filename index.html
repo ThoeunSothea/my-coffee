@@ -447,18 +447,18 @@
 </head>
 <body>
     <header>
-        <section class="nav1">
+        <section class="nav1" id="nav1">
             <div class="nav-logo">
                 <img src="img/Cafe-Amazon 6 .jpg" alt="logo">
                 <h1>My Project</h1>
             </div>
-            <div class="nav-meun">
+            <div class="nav-meun" id="nav-meun">
                 <nav>
                     <div class="menu-icon" onclick="toggleMenu()">☰</div>
                     <ul id="menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#AboutUs">About US</a></li>
-                        <li><a href="#About">Course</a></li>
+                        <li><a href="#contact">Course</a></li>
                         <li><a href="#follow">Follow</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="3-login-card.html">Login</a></li>
@@ -636,12 +636,14 @@
                 </div>
             </div>
     </main>
-
+    
+    <br><br><hr><br>
     <main>
-        <section class="About" id="About">
+        <section class="About" id="contact">
             <a href="#top">
                 <h2>OUR PRESENTATIONERS</h2>
             </a>
+            <br>
             <div class="About-body">
                 <h2>My Project</h2>
                 <img src="/img/Screenshot 2025-02-13 234512.png" alt="">
@@ -742,17 +744,30 @@
         }
         slides[slideIndex - 1].style.display = "block";
     }
-//     function toggleMenu() {
-//     var menu = document.getElementById("menu");
-//     if (menu.style.display === "block") {
-//         menu.style.display = "none";
-//     } else {
-//         menu.style.display = "block";
-//     }
-// }
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.classList.toggle("show"); // បន្ថែម ឬលាក់ class "show"
-}
+
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("show"); // បន្ថែម ឬលាក់ class "show"
+    }
+    function closeMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.remove("show"); // បិទ menu
+    }
+
+    document.querySelectorAll("#menu li a").forEach(item => {
+        item.addEventListener("click", closeMenu);
+    });
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            var targetId = this.getAttribute('href'); // Example: #AboutUs
+            if (targetId.startsWith("#")) { 
+                e.preventDefault(); // Prevent default jump effect
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
     showSlides();
 </script>

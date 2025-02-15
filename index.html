@@ -445,7 +445,7 @@
 
     </style>
 </head>
-<body>
+<body id="top">
     <header>
         <section class="nav1" id="nav1">
             <div class="nav-logo">
@@ -456,7 +456,7 @@
                 <nav>
                     <div class="menu-icon" onclick="toggleMenu()">☰</div>
                     <ul id="menu">
-                        <li><a href="#nav1">Home</a></li>
+                        <li><a href="#top">Home</a></li>
                         <li><a href="#OUR">Course</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#follow">Follow</a></li>
@@ -661,6 +661,7 @@
             </div>
         </section>
     </main>
+    <br><br>
     <footer>
         <div class="follow" id="follow">
             <h3>Follow Us</h3>
@@ -676,7 +677,7 @@
         <div class="footer-container">
             <h2 href="#top">ABouut Us</h2>
             <div class="footer-section" id="AboutUs" >
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nihil alias. Quas, minima. Perferendis ut explicabo libero tempora quod vero.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, nihil alias. Quas, minima. Perferendis ut explicabo libero tempora quod vero. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis, voluptate eligendi veniam recusandae exercitationem sunt itaque hic cumque. Provident voluptatum praesentium, quisquam blanditiis tenetur numquam fuga, sapiente sed illo, tempora pariatur deserunt facilis beatae? Enim mollitia necessitatibus magnam sapiente dolore, aliquam rerum nulla impedit et fuga soluta, corporis quam non asperiores eum corrupti aliquid, placeat iure possimus aut consequatur expedita obcaecati tenetur quibusdam! Reprehenderit fugit deserunt ullam nihil tenetur, quo atque. Quaerat accusantium saepe maiores veritatis placeat, iure quia perspiciatis dolorem. Molestias explicabo debitis asperiores enim neque rerum sapiente. Modi saepe hic repellendus quas consequatur, quia eligendi? Fuga obcaecati natus nobis id adipisci dolores placeat neque, inventore illo distinctio aliquid dicta repellendus quidem aliquam eveniet facere ex tempore ratione quas suscipit perferendis molestiae nesciunt consequatur. Fugit sit quos sapiente accusantium molestias quaerat dicta iusto voluptatibus possimus quis, incidunt mollitia molestiae tenetur enim aliquid reiciendis accusamus saepe? Neque nam harum modi corporis hic porro voluptatem ea eveniet sed, nulla ratione nisi! Fuga nam fugit deserunt magni praesentium, laudantium minus illo expedita exercitationem vitae doloremque atque, iusto quae. Impedit rerum explicabo et distinctio ratione, placeat molestias laboriosam eius expedita vitae eaque amet cupiditate magnam earum aut atque! Fugit iste deserunt nemo minima?</p>
             </div>
             <hr>
             
@@ -769,5 +770,8 @@
             }
         });
     });
+    function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
     showSlides();
 </script>
